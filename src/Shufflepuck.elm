@@ -1,7 +1,7 @@
 module Shufflepuck exposing (create, default)
 
 import Here4.App as App exposing (..)
-import Here4.App.Control exposing (..)
+import Here4.App.Types exposing (..)
 import Here4.Body exposing (..)
 import Here4.Bounding exposing (Bounding, bounce, bump)
 import Here4.Bounding.Box exposing (Box, boundingBox)
