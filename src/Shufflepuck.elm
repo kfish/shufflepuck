@@ -521,7 +521,7 @@ v3_clamp len v =
         V3.scale len (V3.normalize v)
 
 
-animate : Ground -> Time -> Model -> Model
+animate : Ground -> Time -> Model -> ( Model, Cmd (CtrlMsg Msg) )
 animate ground dt model =
     let
         setElevation pos =
@@ -539,7 +539,9 @@ animate ground dt model =
                 , robotPaddle2 = robot
             }
     in
-        setPosition (setElevation model.attributes.position) (collide dt newModel)
+        ( setPosition (setElevation model.attributes.position) (collide dt newModel)
+        , Cmd.none
+        )
 
 
 bodies : Model -> Vec3 -> List Body
