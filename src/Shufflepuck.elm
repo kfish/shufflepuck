@@ -413,10 +413,10 @@ movePaddle : Inputs -> Model -> Model
 movePaddle inputs model =
     let
         dx =
-            -2.0 * (inputs.x + inputs.mx)
+            -0.1 * (inputs.x + inputs.mx)
 
         dy =
-            2.0 * (inputs.y + inputs.my)
+            0.1 * (inputs.y + inputs.my)
 
         p =
             model.paddle1
